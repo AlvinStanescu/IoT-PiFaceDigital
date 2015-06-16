@@ -8,4 +8,7 @@ See the *PiFaceDigital2* sample project.
 This driver is still under development. **Use at your own risk**. Please report any issues with the driver on GitHub.
 
 # Testing
-At the moment, only the outputs have been tested, however inputs should work fine as well. Interrupts are not supported yet.
+- Tested on the PiFaceDigital2 board.
+- Only outputting has been tested at the moment
+- Inputs should work fine as well. However, interrupts are not supported yet. 
+
