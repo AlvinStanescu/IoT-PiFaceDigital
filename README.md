@@ -1,5 +1,5 @@
 # IoT-PiFaceDigital
-Driver for the PiFaceDigital boards for Windows 10 IoT Core. Contains an MCP23S17 I\O Expander driver, wrapped up in an easy-to-use interface to interact with the PiFaceDigital board.
+Driver for the PiFaceDigital boards for Windows 10 IoT Core. Contains an MCP23S17 I/O Expander driver, wrapped up in an easy-to-use interface to interact with the PiFaceDigital board.
 
 # Code Example
 See the *PiFaceDigital2* sample project. 
