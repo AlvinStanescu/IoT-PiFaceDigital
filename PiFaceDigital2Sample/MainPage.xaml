@@ -8,6 +8,19 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center">
+            <ToggleSwitch Header="Output 0" Margin="10,20,10,10" Toggled="ToggleSwitch_OnToggled"/>
+            <ToggleSwitch Header="Output 1" Margin="10,10,10,10" Toggled="ToggleSwitch_OnToggled"/>
+            <ToggleSwitch Header="Output 2" Margin="10,10,10,10" Toggled="ToggleSwitch_OnToggled"/>
+            <ToggleSwitch Header="Output 3" Margin="10,10,10,10" Toggled="ToggleSwitch_OnToggled"/>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Center">
+            <ToggleSwitch Header="Output 4" Margin="10,20,10,10" Toggled="ToggleSwitch_OnToggled"/>
+            <ToggleSwitch Header="Output 5" Margin="10,10,10,10" Toggled="ToggleSwitch_OnToggled"/>
+            <ToggleSwitch Header="Output 6" Margin="10,10,10,10" Toggled="ToggleSwitch_OnToggled"/>
+            <ToggleSwitch Header="Output 7" Margin="10,10,10,10" Toggled="ToggleSwitch_OnToggled"/>
+        </StackPanel>
+        <TextBlock x:Name="TitleText" HorizontalAlignment="Center" Margin="50,50,50,50" TextWrapping="Wrap" Text="" VerticalAlignment="Top" />
+        <Button x:Name="button" Content="Disconnect the board" HorizontalAlignment="Center" Margin="50,50,50,50" VerticalAlignment="Bottom"/>
     </Grid>
 </Page>

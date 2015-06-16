@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Windows.Devices.Enumeration;
 using Windows.Devices.Spi;
@@ -27,6 +28,7 @@ namespace PiFaceDigital2Sample
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private PiFaceDigital piFaceDigital;
 
         public MainPage()
         {
@@ -36,8 +38,6 @@ namespace PiFaceDigital2Sample
 
         public async void InitializeSystem()
         {
-            PiFaceDigital piFaceDigital = null;
-
             try
             {
                 var deviceSelector = SpiDevice.GetDeviceSelector();
@@ -45,16 +45,31 @@ namespace PiFaceDigital2Sample
 
                 piFaceDigital = new PiFaceDigital(spiControllers[0]);
                 await piFaceDigital.Init();
-                piFaceDigital.LEDs[0].SetAll();
-                piFaceDigital.LEDs[7].SetAll();
+                this.TitleText.Text = "Use the outputs to control the LEDs.";
+                piFaceDigital?.LEDs[7].SetAll();
             }
             catch (Exception e)
             {
                 Debug.WriteLine("Exception: {0}", e.Message);
-            }
-            finally
-            {
                 piFaceDigital?.Dispose();
+                this.TitleText.Text = "Initialization failed.";
+                piFaceDigital = null;
+            }
+        }
+
+        private void ToggleSwitch_OnToggled(object sender, RoutedEventArgs e)
+        {
+            var toggleSwitch = (ToggleSwitch) e.OriginalSource;
+            var headerText = toggleSwitch.Header.ToString();
+            var portNumber = Byte.Parse((Regex.Match(headerText, "\\d").Value));
+
+            if (toggleSwitch.IsOn)
+            {
+                piFaceDigital?.LEDs[portNumber].SetAll();
+            }
+            else
+            {
+                piFaceDigital?.LEDs[portNumber].ClearAll();
             }
         }
     }
