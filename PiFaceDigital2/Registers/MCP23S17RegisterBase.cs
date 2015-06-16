@@ -58,7 +58,7 @@ namespace PiFace
         /// <summary>
         /// Sets all bits.
         /// </summary>
-        public virtual void SetAllBits()
+        public virtual void SetAll()
         {
             this.Value = 0xFF;
         }
@@ -66,7 +66,7 @@ namespace PiFace
         /// <summary>
         /// Clears all bits.
         /// </summary>
-        public virtual void ClearAllBits()
+        public virtual void ClearAll()
         {
             this.Value = 0x00;
         }

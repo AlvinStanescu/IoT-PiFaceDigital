@@ -45,8 +45,8 @@ namespace PiFaceDigital2Sample
 
                 piFaceDigital = new PiFaceDigital(spiControllers[0]);
                 await piFaceDigital.Init();
-                piFaceDigital.LEDs[0].SetAllBits();
-                piFaceDigital.LEDs[7].SetAllBits();
+                piFaceDigital.LEDs[0].SetAll();
+                piFaceDigital.LEDs[7].SetAll();
             }
             catch (Exception e)
             {

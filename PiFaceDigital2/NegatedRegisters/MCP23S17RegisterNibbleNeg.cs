@@ -62,7 +62,7 @@ namespace PiFace
         /// <summary>
         /// Sets all bits.
         /// </summary>
-        public override void SetAllBits()
+        public override void SetAll()
         {
             this.Value = 0xF;
         }
@@ -70,7 +70,7 @@ namespace PiFace
         /// <summary>
         /// Clears all bits.
         /// </summary>
-        public override void ClearAllBits()
+        public override void ClearAll()
         {
             this.Value = 0x0;
         }
