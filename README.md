@@ -12,3 +12,5 @@ This driver is still under development. **Use at your own risk**. Please report 
 - Only outputting has been tested at the moment
 - Inputs should work fine as well. However, interrupts are not supported yet. 
 
+# Licensing
+The software is distributed under the MIT License.
